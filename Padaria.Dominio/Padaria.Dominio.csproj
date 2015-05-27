@@ -59,6 +59,7 @@
     <Compile Include="Entidades\Venda.cs" />
     <Compile Include="Entidades\VendaComComandaAtiva.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositorio\CategoriaRepositorio.cs" />
     <Compile Include="Repositorio\_DbContext.cs" />
   </ItemGroup>
   <ItemGroup>

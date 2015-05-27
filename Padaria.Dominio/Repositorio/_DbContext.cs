@@ -16,7 +16,6 @@ namespace Padaria.Dominio.Repositorio
         public DbSet<Cliente> Cliente { get; set; }
         public DbSet<Comanda> Comanda { get; set; }
         public DbSet<Data> Data { get; set; }
-
         public DbSet<Fiado> Fiado { get; set; }
         public DbSet<Produto> Produto { get; set; }
         public DbSet<TipoPagamento> TipoPagamento { get; set; }
@@ -24,6 +23,7 @@ namespace Padaria.Dominio.Repositorio
         public DbSet<Venda> Venda { get; set; }
         public DbSet<VendaComComandaAtiva> VendaComComandaAtiva { get; set; }
         public DbSet<Permissao> Permissao { get; set; }
+
         protected override void OnModelCreating(DbModelBuilder banco)
         {
             banco.Conventions.Remove<PluralizingTableNameConvention>();
