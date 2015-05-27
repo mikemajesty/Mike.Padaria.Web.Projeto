@@ -33,6 +33,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="System" />
@@ -106,6 +112,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Padaria.Dominio\Padaria.Dominio.csproj">
+      <Project>{80e4c93f-65a7-4ce1-9887-7f5065d025d8}</Project>
+      <Name>Padaria.Dominio</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Padaria.View\Padaria.View.csproj">
       <Project>{25D4DE59-C431-44F5-867D-85973DAB43B0}</Project>
       <Name>Padaria.View</Name>
