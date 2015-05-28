@@ -175,6 +175,11 @@
     </Content>
     <Content Include="Views\Web.config" />
     <Content Include="Scripts\jquery-1.9.0.min.map" />
+    <Content Include="Views\Categoria\Listar.cshtml" />
+    <Content Include="Views\Categoria\Cadastrar.cshtml" />
+    <Content Include="Views\Categoria\Editar.cshtml" />
+    <Content Include="Views\Categoria\Deletar.cshtml" />
+    <Content Include="Views\Categoria\Detales.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
