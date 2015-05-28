@@ -1,10 +1,9 @@
 ﻿using Padaria.Dominio.Entidades;
 using Padaria.Dominio.Repositorio;
-using System;
-using System.Collections.Generic;
+using Padaria.View.Models;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
+using System.Data.Entity;
 
 namespace Padaria.View.Controllers
 {
@@ -42,7 +41,7 @@ namespace Padaria.View.Controllers
         public ActionResult Cadastrar(CadastrarPordutoPorUnidadeViewModel viewModel)
         {
             produtoDB = new ProdutoRepositorio();
-            produtoDB.InsertProduto(viewModel.Produto);
+            produtoDB.Salvar(viewModel.Produto);
             return RedirectToAction("Listar");
         }
 
@@ -50,7 +49,7 @@ namespace Padaria.View.Controllers
         public ActionResult Deletar(int ProdutoID)
         {
             produtoDB = new ProdutoRepositorio();
-            Produto Produto = produtoDB.GetProdutoForDelete(ProdutoID);
+            Produto Produto = produtoDB.GetProduto(ProdutoID);
             return ((Produto != null) ? View(CarregarViewModelProdutoCategoria(Produto, Produto.CategoriaID)) : View());
 
         }
@@ -58,7 +57,11 @@ namespace Padaria.View.Controllers
         public ActionResult Deletar(CadastrarPordutoPorUnidadeViewModel viewModel)
         {
             produtoDB = new ProdutoRepositorio();
-            return produtoDB.DeleteCliente(viewModel.Produto.ProdutoID) != 0 ? View("Listar", this.ListarCliente()) : View();
+            if (produtoDB.Deletar(viewModel.Produto) != 0 )
+	        {
+                  return RedirectToAction("Listar");
+ 	        }
+            return View(viewModel);
 
         }
         [HttpGet]
@@ -72,7 +75,7 @@ namespace Padaria.View.Controllers
         public ActionResult Editar(CadastrarPordutoPorUnidadeViewModel viewModel)
         {
             produtoDB = new ProdutoRepositorio();
-            return produtoDB.Edit(viewModel.Produto) != 0 ? View("Listar", ListarCliente()) : View(viewModel);
+            return produtoDB.Editar(viewModel.Produto) != 0 ? View("Listar", ListarCliente()) : View(viewModel);
 
         }
         [HttpGet]

@@ -1,5 +1,6 @@
 ﻿using Padaria.Dominio.Entidades;
 using Padaria.Dominio.Repositorio;
+using Padaria.View.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;

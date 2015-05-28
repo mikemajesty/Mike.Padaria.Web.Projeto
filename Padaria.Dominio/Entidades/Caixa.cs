@@ -13,13 +13,13 @@ namespace Padaria.Dominio.Entidades
         [Range(minimum: 0, maximum: double.MaxValue, ErrorMessage = "Campo {0} contem valores invalidos")]
         [DisplayName(displayName: "Valor:")]
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:C}")]
-        [RegularExpression(@"\d+(\,\d{1.2})?", ErrorMessage = "Campo {0} contém valores Inválido.")]*/
+        [RegularExpression(@"\d+(\,\d{1.2})?", ErrorMessage = "Campo {0} contém valores Inválido.")]
 
         public decimal Valor { get; set; }
         [RegularExpression(@"^[0-9]{4}$", ErrorMessage = "Campo {0} só permite numeros.")]       
         [DisplayName(displayName: "UsuarioID:")]
         [Key]
-        [Range(minimum: 0, maximum: int.MinValue, ErrorMessage = "Campo {0} só permite valores acima de 1.")]*/
+        [Range(minimum: 0, maximum: int.MinValue, ErrorMessage = "Campo {0} só permite valores acima de 1.")]
         public int UsuarioID { get; set; }
     }
 }

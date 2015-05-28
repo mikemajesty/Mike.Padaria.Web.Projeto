@@ -1,6 +1,7 @@
 ﻿using Padaria.Dominio.Entidades;
 using System.Linq;
 using System.Web.Mvc;
+using System.Data.Entity;
 namespace Padaria.Dominio.Repositorio
 {
     public class ProdutoRepositorio
@@ -23,7 +24,7 @@ namespace Padaria.Dominio.Repositorio
             return banco.SaveChanges() == Sucesso ? Sucesso : Insucesso;
 
         }
-        public int Deletar(Categoria categoria)
+        public int Deletar(Produto categoria)
         {            
             banco.Entry(categoria).State = System.Data.Entity.EntityState.Deleted;
             return banco.SaveChanges() == Sucesso ? Sucesso : Insucesso;
