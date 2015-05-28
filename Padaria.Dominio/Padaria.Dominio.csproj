@@ -66,6 +66,7 @@
     <Compile Include="Repositorio\ProdutoRepositorio.cs" />
     <Compile Include="Repositorio\TipoDePagamentoRepositorio.cs" />
     <Compile Include="Repositorio\UsuariosRepositorio.cs" />
+    <Compile Include="Repositorio\VendaRepositorio.cs" />
     <Compile Include="Repositorio\_DbContext.cs" />
   </ItemGroup>
   <ItemGroup>
