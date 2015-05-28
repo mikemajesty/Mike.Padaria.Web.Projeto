@@ -8,5 +8,7 @@ namespace Padaria.Dominio.Entidades
 {
     public class Permissao
     {
+        public int PermissaoID { get; set; }
+        public string Nome { get; set; }
     }
 }
