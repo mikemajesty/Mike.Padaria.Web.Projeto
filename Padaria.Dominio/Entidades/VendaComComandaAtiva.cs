@@ -7,8 +7,6 @@ namespace Padaria.Dominio.Entidades
    public class VendaComComandaAtiva
    {
        [HiddenInput(DisplayValue = false)]
-       [RegularExpression(@"^[0-9]{4}$", ErrorMessage = "Campo {0} só permite numeros.")]
-       [Required(ErrorMessage = "Campo {0} é obrigatorio.")]
        [DisplayName(displayName: "VendaComComandaAtivaID:")]
        [Key]
        public int VendaComComandaAtivaID { get; set; }

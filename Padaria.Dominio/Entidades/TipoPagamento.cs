@@ -11,9 +11,7 @@ namespace Padaria.Dominio.Entidades
 {
     public class TipoPagamento
     {
-        [HiddenInput(DisplayValue = false)]
-        [RegularExpression(@"^[0-9]{4}$", ErrorMessage = "Campo {0} só permite numeros.")]
-        [Required(ErrorMessage = "Campo {0} é obrigatorio.")]
+        [HiddenInput(DisplayValue = false)]      
         [DisplayName(displayName: "TipoPagamentoID:")]
         [Key]
         public int TipoPagamentoID { get; set; }

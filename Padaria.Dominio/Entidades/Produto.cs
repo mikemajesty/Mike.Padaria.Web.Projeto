@@ -7,8 +7,7 @@ namespace Padaria.Dominio.Entidades
     public class Produto
     {
      
-        [RegularExpression(@"^[0-9]{4}$", ErrorMessage = "Campo {0} só permite numeros.")]
-        [Required(ErrorMessage = "Campo {0} é obrigatorio.")]
+        
         [DisplayName(displayName: "ProdutoID:")]
         [HiddenInput(DisplayValue = false)]
         [Key]

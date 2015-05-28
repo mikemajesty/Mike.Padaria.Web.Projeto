@@ -14,8 +14,6 @@ namespace Padaria.Dominio.Entidades
     {
         [Key]
         [HiddenInput(DisplayValue = false)]
-        [RegularExpression(@"^[0-9]{4}$", ErrorMessage = "Campo {0} só permite numeros.")]
-        [Required(ErrorMessage = "Campo {0} é obrigatorio.")]
         [DisplayName(displayName: "UsuarioID:")]
         public int UsuarioID { get; set; }
         [StringLength(maximumLength: 20, MinimumLength = 5, ErrorMessage = "Campo {0} só permite de 5 a 20 letras.")]

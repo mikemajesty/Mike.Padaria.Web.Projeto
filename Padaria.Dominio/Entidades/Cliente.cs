@@ -6,9 +6,7 @@ namespace Padaria.Dominio.Entidades
 {
     public class Cliente
     {
-        [HiddenInput(DisplayValue = false)]       
-        [RegularExpression(@"^[0-9]{4}$", ErrorMessage = "Campo {0} só permite numeros.")]
-        [Required(ErrorMessage = "Campo {0} é obrigatorio.")]
+        [HiddenInput(DisplayValue = false)]     
         [DisplayName(displayName: "ClienteID:")]
         [Key]
         public int ClienteID { get; set; }

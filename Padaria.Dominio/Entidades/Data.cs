@@ -12,9 +12,6 @@ namespace Padaria.Dominio.Entidades
    public class Data
     {
         [HiddenInput(DisplayValue = false)]
-       [Range(minimum: 0, maximum: int.MaxValue, ErrorMessage = "Campo {0} só permite valores acima de 1 e 2.147.483.647.")]
-       [RegularExpression(@"^[0-9]{4}$", ErrorMessage = "Campo {0} só permite numeros.")]
-       [Required(ErrorMessage = "Campo {0} é obrigatorio.")]
        [DisplayName(displayName: "DataID:")]
         [Key]
         public int DataID { get; set; }
