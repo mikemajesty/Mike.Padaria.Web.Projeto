@@ -1,4 +1,5 @@
 ﻿using Padaria.Dominio.Entidades;
+using System.Linq;
 
 namespace Padaria.Dominio.Repositorio
 {
@@ -11,6 +12,11 @@ namespace Padaria.Dominio.Repositorio
         {
             get { return banco; }
         }
+        private IQueryable<Produto> ListarCliente()
+        {            
+            return Banco.Produto.Include(c => c.Categoria);
+        }
+       
         public int Salvar(Produto produto)
         {
             banco.Produto.Add(produto);
