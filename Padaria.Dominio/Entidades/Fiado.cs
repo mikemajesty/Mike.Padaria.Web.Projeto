@@ -1,12 +1,36 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
+using System.Web.Mvc;
 
 namespace Padaria.Dominio.Entidades
 {
     public class Fiado
     {
+        [Range(minimum: 0, maximum: int.MaxValue, ErrorMessage = "Campo {0} só permite valores acima de 1 e 2.147.483.647.")]
+        [RegularExpression(@"^[0-9]{4}$", ErrorMessage = "Campo {0} só permite numeros.")]
+        [Required(ErrorMessage = "Campo {0} é obrigatorio.")]
+        [DisplayName(displayName: "FiadoID:")]
+        [HiddenInput(DisplayValue = false)]
+        [Key]
+        public int FiadoID { get; set; }
+        [Range(minimum: 0, maximum: int.MaxValue, ErrorMessage = "Campo {0} só permite valores acima de 1 e 2.147.483.647.")]
+        [RegularExpression(@"^[0-9]{4}$", ErrorMessage = "Campo {0} só permite numeros.")]
+        [Required(ErrorMessage = "Campo {0} é obrigatorio.")]
+        [DisplayName(displayName: "ClienteID:")]
+        [HiddenInput(DisplayValue = false)]
+        public int ClienteID { get; set; }
+        [Range(minimum: 0, maximum: double.MaxValue, ErrorMessage = "Campo {0} contem vaores invalidos")]
+        [DisplayName(displayName: "Valor:")]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:C}")]
+        [RegularExpression(@"\d+(\,\d{1.2})?", ErrorMessage = "Campo {0} contém valores Inválido.")]
+        public decimal Valor { get; set; }
+        [Range(minimum: 0, maximum: int.MaxValue, ErrorMessage = "Campo {0} só permite valores acima de 1 e 2.147.483.647.")]
+        [RegularExpression(@"^[0-9]{4}$", ErrorMessage = "Campo {0} só permite numeros.")]
+        [Required(ErrorMessage = "Campo {0} é obrigatorio.")]
+        [DisplayName(displayName: "FuncionarioID:")]
+        [HiddenInput(DisplayValue = false)]
+        public int FuncionarioID { get; set; }
+
+        public virtual Usuarios Usuario { get; set; }
     }
 }
