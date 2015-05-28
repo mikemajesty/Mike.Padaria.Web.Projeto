@@ -13,7 +13,7 @@ namespace Padaria.Dominio.Repositorio
         {
             get { return banco; }
         }
-        private IQueryable<Produto> ListarCliente()
+        public IQueryable<Produto> ListarCliente()
         {            
             return Banco.Produto.Include(c => c.Categoria);
         }
