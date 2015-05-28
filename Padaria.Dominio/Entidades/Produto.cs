@@ -6,7 +6,7 @@ namespace Padaria.Dominio.Entidades
 {
     public class Produto
     {
-        [Range(minimum: 0, maximum: int.MaxValue, ErrorMessage = "Campo {0} só permite valores acima de 1 e 2.147.483.647.")]
+     
         [RegularExpression(@"^[0-9]{4}$", ErrorMessage = "Campo {0} só permite numeros.")]
         [Required(ErrorMessage = "Campo {0} é obrigatorio.")]
         [DisplayName(displayName: "ProdutoID:")]
@@ -22,7 +22,6 @@ namespace Padaria.Dominio.Entidades
         [DisplayName(displayName: "Nome:")]
         [Required(ErrorMessage = "Campo {0} é obrigatorio.")]
         public string Nome { get; set; }
-        [Range(minimum: 0, maximum: int.MaxValue, ErrorMessage = "Campo {0} só permite valores acima de 1 e 2.147.483.647.")]
         [RegularExpression(@"^[0-9]{4}$", ErrorMessage = "Campo {0} só permite numeros.")]
         [Required(ErrorMessage = "Campo {0} é obrigatorio.")]
         [DisplayName(displayName: "CategoriaID:")]
@@ -40,16 +39,15 @@ namespace Padaria.Dominio.Entidades
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:C}")]
         [RegularExpression(@"\d+(\,\d{1.2})?", ErrorMessage = "Campo {0} contém valores Inválido.")]
         public decimal PrecoVenda { get; set; }
-        /// [Required(ErrorMessage = "Campo {0} é obrigatorio.")]
+        [Required(ErrorMessage = "Campo {0} é obrigatorio.")]
         [DisplayName(displayName: "Descrição:")]
-        [StringLength(maximumLength: 70, MinimumLength = 0, ErrorMessage = "Campo {0} só permite de 0 a 70 letras.")]
-        [RegularExpression(@"^[a-zA-Z0-9 ]+$", ErrorMessage = "Campo {0} só permite numeros e letras.")]
+        [StringLength(maximumLength: 70, MinimumLength = 0, ErrorMessage = "Campo {0} só permite de 0 a 70 letras.")]       
         public string Descricao { get; set; }
-        // [Range(minimum: 0, maximum: 100, ErrorMessage = "Campo {0} só permite de 0 a 100")]
-        [RegularExpression(@"^[0-9]+$", ErrorMessage = "Campo {0} só permite numeros.")]
-        [DisplayName(displayName: "Quantidade:")]
+        //[Range(minimum: 0, maximum: 100, ErrorMessage = "Campo {0} só permite de 0 a 100")]
+        //[RegularExpression(@"^[0-9]+$", ErrorMessage = "Campo {0} só permite numeros.")]
+        //[DisplayName(displayName: "Quantidade:")]
         //[Required(ErrorMessage = "Campo {0} é obrigatorio.")]
-        /* [Required(ErrorMessage = "Campo {0} é obrigatorio.")]*/
+        ///* [Required(ErrorMessage = "Campo {0} é obrigatorio.")]*/
         public int Quantidade { get; set; }
         //[Required(ErrorMessage = "Campo {0} é obrigatorio.")]
         public int QuantidadeMaxima { get; set; }

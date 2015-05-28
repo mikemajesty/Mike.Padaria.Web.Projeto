@@ -13,7 +13,7 @@ namespace Padaria.View.Controllers
         private CategoriaRepositorio categoriaDB;
         private const int Sucesso = 1;
         private const int Insucesso = 0;
-        //private 
+      
         [HttpGet]
         public ActionResult Listar()
         {

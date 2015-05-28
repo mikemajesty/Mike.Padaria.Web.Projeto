@@ -16,7 +16,7 @@ namespace Padaria.View
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+                defaults: new { controller = "Categoria", action = "Listar", id = UrlParameter.Optional }
             );
         }
     }

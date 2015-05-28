@@ -1,0 +1,31 @@
+﻿@using System.Web.Optimization;
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/bootstrap")
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/jquery")
+    @Styles.Render("~/Content/Custom")
+
+</head>
+<body>
+    <div class="navbar navbar-inverse" role="navigation">
+        <a class="navbar-brand" href="#">
+            Valor No Caixa : @Html.Action("GetValorCaixa", "Venda")
+        </a>
+    </div>
+
+    <div class="col-xs-3">
+        @Html.Partial("~/Views/Partial/_Menu.cshtml")
+    </div>
+    <div class="col-xs-9">
+        @RenderBody()
+    </div>
+
+</body>
+</html>

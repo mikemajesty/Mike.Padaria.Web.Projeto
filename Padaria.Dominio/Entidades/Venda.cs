@@ -7,7 +7,6 @@ namespace Padaria.Dominio.Entidades
     public class Venda
     {
         [HiddenInput(DisplayValue = false)]
-        [Range(minimum: 0, maximum: int.MaxValue, ErrorMessage = "Campo {0} só permite valores acima de 1 e 2.147.483.647.")]
         [RegularExpression(@"^[0-9]{4}$", ErrorMessage = "Campo {0} só permite numeros.")]
         [Required(ErrorMessage = "Campo {0} é obrigatorio.")]
         [DisplayName(displayName: "VendaID:")]
@@ -30,12 +29,10 @@ namespace Padaria.Dominio.Entidades
         [Required(ErrorMessage = "Campo {0} é obrigatorio.")]
         public string Data { get; set; }
         [HiddenInput(DisplayValue = false)]
-        [Range(minimum: 0, maximum: int.MaxValue, ErrorMessage = "Campo {0} só permite valores acima de 1 e 2.147.483.647.")]
         [RegularExpression(@"^[0-9]{4}$", ErrorMessage = "Campo {0} só permite numeros.")]
         [DisplayName(displayName: "UsuarioID:")]
         public int UsuarioID { get; set; }
         [HiddenInput(DisplayValue = false)]
-        [Range(minimum: 0, maximum: int.MaxValue, ErrorMessage = "Campo {0} só permite valores acima de 1 e 2.147.483.647.")]
         [RegularExpression(@"^[0-9]{4}$", ErrorMessage = "Campo {0} só permite numeros.")]
         [DisplayName(displayName: "TipoPagamentoID:")]
         public int TipoPagamentoID { get; set; }
