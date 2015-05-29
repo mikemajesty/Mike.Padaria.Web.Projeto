@@ -207,6 +207,11 @@
     <Content Include="Views\TipoDePagamento\Deletar.cshtml" />
     <Content Include="Views\TipoDePagamento\Detales.cshtml" />
     <Content Include="Views\TipoDePagamento\Listar.cshtml" />
+    <Content Include="Views\Usuarios\Listar.cshtml" />
+    <Content Include="Views\Usuarios\Cadastrar.cshtml" />
+    <Content Include="Views\Usuarios\Editar.cshtml" />
+    <Content Include="Views\Usuarios\Detales.cshtml" />
+    <Content Include="Views\Usuarios\Deletar.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

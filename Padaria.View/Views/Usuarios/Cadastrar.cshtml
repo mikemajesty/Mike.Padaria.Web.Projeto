@@ -1,0 +1,62 @@
+﻿@model Padaria.View.Models.CadastraUsuariosPermissaoViewModel
+
+@{
+    ViewBag.Title = "Cadastrar";
+    Layout = "~/Views/MasterPage/Home/_Home.cshtml";
+}
+
+<h2>Cadastrar</h2>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Cliente</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Usuarios.Nome)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Usuarios.Nome)
+            @Html.ValidationMessageFor(model => model.Usuarios.Nome)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Usuarios.Senha)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Usuarios.Senha)
+            @Html.ValidationMessageFor(model => model.Usuarios.Senha)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Usuarios.Permissao.Nome)
+        </div>
+        <div class="editor-field">
+            @Html.DropDownListFor(model => model.Usuarios.PermissaoID, Model.Permissao, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.Usuarios.PermissaoID)
+        </div>
+
+        <br />
+        @Html.HiddenFor(c => c.Usuarios.UltimoAcesso)
+        <p>
+            <input type="submit" value="Salvar" class="btn btn-primary" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Voltar", "Listar")
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('select').addClass("selec");
+    });
+</script>
+<style type="text/css">
+    .selec{
+        width: 50%;
+    }
+</style>

@@ -1,0 +1,71 @@
+﻿@model Padaria.View.Models.CadastraUsuariosPermissaoViewModel
+@{
+    ViewBag.Title = "Deletar";
+    Layout = "~/Views/MasterPage/Home/_Home.cshtml";
+}
+
+
+<h2>Deletar</h2>
+@using (Html.BeginForm())
+{
+
+
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Cliente</legend>
+        @Html.HiddenFor(c => c.Usuarios.UsuarioID)
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Usuarios.Nome)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Usuarios.Nome)
+            @Html.ValidationMessageFor(model => model.Usuarios.Nome)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Usuarios.Senha)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Usuarios.Senha)
+            @Html.ValidationMessageFor(model => model.Usuarios.Senha)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Usuarios.Permissao.Nome)
+        </div>
+        <div class="editor-field">
+            @Html.DropDownListFor(model => model.Usuarios.PermissaoID, Model.Permissao, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.Usuarios.PermissaoID)
+        </div>
+
+        <br />
+        @Html.HiddenFor(c => c.Usuarios.UltimoAcesso)
+
+    </fieldset>
+    <input type="submit" value="Deletar" class="btn btn-primary" />
+}
+
+<br />
+<div>
+    @Html.ActionLink("Voltar", "Listar", null, new { @class = "btn btn-default" })
+</div>
+
+
+
+
+
+
+
+
+<script>
+    $(document).ready(function () {
+        $('input[type=text]').attr("readonly", "readonly");
+        $('input[type=number]').attr("readonly", "readonly");
+        $('select').attr("disabled", "disabled");
+    });
+    $('input[type=submit]').click(function () {
+        $('select').removeAttr("disabled", "disabled");
+    });
+</script>

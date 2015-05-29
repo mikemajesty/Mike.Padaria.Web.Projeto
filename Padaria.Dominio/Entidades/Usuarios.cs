@@ -25,9 +25,9 @@ namespace Padaria.Dominio.Entidades
         [Required(ErrorMessage = "Campo {0} é obrigatorio.")]
         public string Senha { get; set; }
         [DisplayName(displayName: "Confirmar Senha:")]
-        [System.ComponentModel.DataAnnotations.CompareAttribute("Senha", ErrorMessage = "Senhas não coincide.")]
-        [StringLength(maximumLength: 20, MinimumLength = 5, ErrorMessage = "Campo {0} só permite de 5 a 20 letras.")]
-        [Required(ErrorMessage = "Campo {0} é obrigatorio.")]
+        //[System.ComponentModel.DataAnnotations.CompareAttribute("Senha", ErrorMessage = "Senhas não coincide.")]
+       // [StringLength(maximumLength: 20, MinimumLength = 5, ErrorMessage = "Campo {0} só permite de 5 a 20 letras.")]
+        //[Required(ErrorMessage = "Campo {0} é obrigatorio.")]
         [NotMapped]
         public string Confimar { get; set; }
       
