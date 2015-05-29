@@ -1,0 +1,27 @@
+﻿@model Padaria.Dominio.Entidades.Comanda
+
+@{
+    ViewBag.Title = "Editar";
+    Layout = "~/Views/MasterPage/Home/_Home.cshtml";
+}
+
+<h2>Editar</h2>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <fieldset>
+        <legend>Comanda</legend>
+        @Html.HiddenFor(c => c.ComandaID)
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.Codigo)
+        </div>
+        <div class="display-field">
+            @Html.EditorFor(model => model.Codigo)
+        </div>
+    </fieldset>
+    <br />
+    <p>
+        <input type="submit" value="Editar" class="btn btn-success" /> |
+        @Html.ActionLink("Voltar", "Listar", null, new { @class = "btn btn-primary" })
+    </p>
+}

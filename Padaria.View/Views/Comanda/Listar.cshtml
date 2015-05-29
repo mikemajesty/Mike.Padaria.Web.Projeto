@@ -1,0 +1,36 @@
+﻿@model IEnumerable<Padaria.Dominio.Entidades.Comanda>
+
+@{
+    ViewBag.Title = "Listar";
+    Layout = "~/Views/MasterPage/Home/_Home.cshtml";
+}
+
+<h2>Listar</h2>
+
+<p>
+    @Html.ActionLink("Criar Novo", "Cadastrar", "Comanda", null, new { @class = "btn btn-primary" })
+</p>
+<table class="table">
+    <tr style="background-color:yellow">
+        <th>
+            @Html.DisplayNameFor(model => model.Codigo)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Codigo)
+            </td>
+            <td>
+                @Html.ActionLink("Editar", "Editar", new { ComandaID = item.ComandaID }) |
+                @Html.ActionLink("Detales", "Detales", new { ComandaID = item.ComandaID }) |
+                @Html.ActionLink("Deletar", "Deletar", new { ComandaID = item.ComandaID })
+            </td>
+        </tr>
+    }
+
+</table>
+

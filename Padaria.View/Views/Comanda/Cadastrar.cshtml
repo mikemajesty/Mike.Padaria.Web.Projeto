@@ -1,0 +1,33 @@
+﻿@model Padaria.Dominio.Entidades.Comanda
+
+@{
+    ViewBag.Title = "Cadastrar";
+    Layout = "~/Views/MasterPage/Home/_Home.cshtml";
+}
+
+<h2>Cadastrar</h2>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Comanda</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Codigo)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Codigo)
+            @Html.ValidationMessageFor(model => model.Codigo)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

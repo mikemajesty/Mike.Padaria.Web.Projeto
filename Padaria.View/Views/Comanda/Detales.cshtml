@@ -1,0 +1,27 @@
+﻿@model Padaria.Dominio.Entidades.Comanda
+
+@{
+    ViewBag.Title = "Detales";
+    Layout = "~/Views/MasterPage/Home/_Home.cshtml";
+}
+
+<h2>Detales</h2>
+<fieldset>
+    <legend>Comanda</legend>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.Codigo)
+    </div>
+    <div class="display-field">
+        @Html.TextBoxFor(model => model.Codigo)
+    </div>
+</fieldset>
+<br />
+<p>
+    @Html.ActionLink("Voltar", "Listar", null, new { @class = "btn btn-primary" })
+</p>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('input[type=text]').attr("readonly", "readonly");
+    });
+</script>
