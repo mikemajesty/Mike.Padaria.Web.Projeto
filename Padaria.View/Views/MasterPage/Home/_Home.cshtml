@@ -14,16 +14,18 @@
 <body>
     <div class="navbar navbar-inverse" role="navigation">
         <a class="navbar-brand" href="#">
-            Valor No Caixa : @*@Html.Action("GetValorCaixa", "Venda")*@
+            Valor No Caixa : @Html.Action("GetValorCaixa", "Venda")
         </a>
     </div>
 
     <div class="col-xs-3">
         @Html.Partial("~/Views/MasterPage/Home/_Menu.cshtml")
     </div>
-    <div class="col-xs-9">
+    <div class="col-xs-7">
         @RenderBody()
     </div>
-
+    <div class="col-xs-2">
+        @Html.Partial("~/Views/MasterPage/Home/_MenuVenda.cshtml")
+    </div>
 </body>
 </html>
