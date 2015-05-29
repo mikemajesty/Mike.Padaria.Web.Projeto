@@ -1,5 +1,28 @@
-﻿@{
+﻿@model Padaria.Dominio.Entidades.Categoria
+
+@{
     ViewBag.Title = "Detales";
+    Layout = "~/Views/MasterPage/Home/_Home.cshtml";
 }
 
 <h2>Detales</h2>
+
+<fieldset>
+    <legend>Categoria</legend>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.Nome):
+    </div>
+    <div class="display-field">
+        @Html.TextBoxFor(model => model.Nome)
+    </div>
+</fieldset>
+<br />
+<p>
+    @Html.ActionLink("Voltar", "Listar", "Categoria", new { @class = "btn btn-primary" })
+</p>
+<script>
+    $(document).ready(function () {
+        $('input[type=text]').attr("readonly", "readonly");
+    });
+</script>

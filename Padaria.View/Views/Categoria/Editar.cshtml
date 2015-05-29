@@ -1,5 +1,38 @@
-﻿@{
+﻿@model Padaria.Dominio.Entidades.Categoria
+
+
+@{
     ViewBag.Title = "Editar";
+    Layout = "~/Views/MasterPage/Home/_Home.cshtml";
 }
 
 <h2>Editar</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Categoria</legend>
+
+        @Html.HiddenFor(model => model.CategoriaID)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Nome)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Nome)
+            @Html.ValidationMessageFor(model => model.Nome)
+        </div>
+
+        <p>
+            <input type="submit" value="Editar" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Voltar", "Listar", "Categoria")
+</div>
+
