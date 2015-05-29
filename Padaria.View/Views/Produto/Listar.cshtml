@@ -1,0 +1,66 @@
+﻿@model IEnumerable<Padaria.Dominio.Entidades.Produto>
+@{
+    ViewBag.Title = "Listar";
+    Layout = "~/Views/MasterPage/Home/_Home.cshtml";
+}
+
+<h2>Listar</h2>
+<p>
+    @Html.ActionLink("Criar Novo", "Cadastrar", "Produto")
+</p>
+<table class="table">
+    <tr style="background-color:yellow">
+
+        <th>
+            @Html.Label("Código")
+        </th>
+        <th>
+            @Html.Label("Nome")
+        </th>
+        <th>
+            @Html.Label("Categoria")
+        </th>
+        <th>
+            @Html.Label("Preço Venda")
+        </th>
+        <th>
+            @Html.Label("Quantidade")
+        </th>
+        <th></th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.Codigo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Categoria.Nome)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.PrecoVenda)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Quantidade)
+
+            </td>
+
+            <td>
+
+                @Html.ActionLink("Editar", "Editar", new { ProdutoID = item.ProdutoID }, new { @class = "btn btn-primary" }) |
+                @Html.ActionLink("Detales", "Detales", new { ProdutoID = item.ProdutoID }, new { @class = "btn btn-primary" }) |
+                @Html.ActionLink("Deletar", "Deletar", new { ProdutoID = item.ProdutoID }, new { @class = "btn btn-primary" })
+            </td>
+
+
+        </tr>
+    }
+
+</table>

@@ -21,10 +21,10 @@ namespace Padaria.Dominio.Entidades
         [DisplayName(displayName: "Nome:")]
         [Required(ErrorMessage = "Campo {0} é obrigatorio.")]
         public string Nome { get; set; }
-        [RegularExpression(@"^[0-9]{4}$", ErrorMessage = "Campo {0} só permite numeros.")]
-        [Required(ErrorMessage = "Campo {0} é obrigatorio.")]
-        [DisplayName(displayName: "CategoriaID:")]
-        [HiddenInput(DisplayValue = false)]
+        //[RegularExpression(@"^[0-9]{4}$", ErrorMessage = "Campo {0} só permite numeros.")]
+        //[Required(ErrorMessage = "Campo Categoria é obrigatorio.")]
+        //[DisplayName(displayName: "Categoria:")]
+        //[HiddenInput(DisplayValue = false)]
         public int CategoriaID { get; set; }
         [Required(ErrorMessage = "Campo {0} é obrigatorio.")]
         [Range(minimum: 0, maximum: double.MaxValue, ErrorMessage = "Campo {0} contem vaores invalidos")]
@@ -39,7 +39,7 @@ namespace Padaria.Dominio.Entidades
         [RegularExpression(@"\d+(\,\d{1.2})?", ErrorMessage = "Campo {0} contém valores Inválido.")]
         public decimal PrecoVenda { get; set; }
         [Required(ErrorMessage = "Campo {0} é obrigatorio.")]
-        [DisplayName(displayName: "Descrição:")]
+        //[DisplayName(displayName: "Descrição:")]
         [StringLength(maximumLength: 70, MinimumLength = 0, ErrorMessage = "Campo {0} só permite de 0 a 70 letras.")]       
         public string Descricao { get; set; }
         //[Range(minimum: 0, maximum: 100, ErrorMessage = "Campo {0} só permite de 0 a 100")]

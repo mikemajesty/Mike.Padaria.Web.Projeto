@@ -1,0 +1,65 @@
+﻿@model Padaria.View.Models.CadastrarPordutoPorUnidadeViewModel
+@{
+    ViewBag.Title = "Detales";
+    Layout = "~/Views/MasterPage/Home/_Home.cshtml";
+}
+
+<h2>Detales</h2>
+@Html.AntiForgeryToken()
+@Html.ValidationSummary(true)
+
+<fieldset>
+    <legend>CadastrarPordutoPorUnidadeViewModel</legend>
+    @Html.HiddenFor(d => d.Produto.ProdutoID)
+    @Html.DisplayNameFor(c => c.Produto.Codigo)
+    @Html.TextBoxFor(c => c.Produto.Codigo)
+    <br />
+    <br />
+    @Html.DisplayNameFor(c => c.Produto.Nome)
+    @Html.TextBoxFor(c => c.Produto.Nome)
+    <br />
+    <br />
+    @Html.DisplayNameFor(c => c.Produto.PrecoCompra)
+    @Html.TextBoxFor(c => c.Produto.PrecoCompra)
+    <br />
+    <br />
+    @Html.DisplayNameFor(c => c.Produto.PrecoVenda)
+    @Html.TextBoxFor(c => c.Produto.PrecoVenda)
+    <br />
+    <br />
+    @Html.DisplayNameFor(c => c.Produto.Quantidade)
+    @Html.TextBoxFor(c => c.Produto.Quantidade)
+    <br />
+    <br />
+    @Html.DisplayNameFor(c => c.Produto.QuantidadeMaxima)
+    @Html.TextBoxFor(c => c.Produto.QuantidadeMaxima)
+    <br />
+    <br />
+    @Html.DisplayNameFor(c => c.Produto.QuantidadeMinima)
+    @Html.TextBoxFor(c => c.Produto.QuantidadeMinima)
+    <br />
+    <br />
+    @Html.DisplayNameFor(c => c.Produto.Descricao)
+    @Html.TextAreaFor(c => c.Produto.Descricao, new {@class="form-control" })
+    <br />
+    <br />
+    @Html.DisplayNameFor(c => c.Produto.CategoriaID)
+    @Html.DropDownListFor(c => c.Produto.CategoriaID, Model.Categoria)
+
+</fieldset>
+
+
+<div>
+    @Html.ActionLink("Voltar", "Listar", "Produto")
+</div>
+<script>
+    $(document).ready(function () {
+        $('input[type=text]').attr("readonly", "readonly");
+        $('input[type=number]').attr("readonly", "readonly");
+        $('textarea').attr("readonly", "readonly");
+        $('select').attr("disabled", "disabled");
+    });
+    $('input[type=submit]').click(function () {
+        $('select').removeAttr("disabled", "disabled");
+    });
+</script>

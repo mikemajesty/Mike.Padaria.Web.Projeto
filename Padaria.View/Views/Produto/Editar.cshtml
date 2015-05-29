@@ -1,0 +1,66 @@
+﻿@model Padaria.View.Models.CadastrarPordutoPorUnidadeViewModel
+@{
+    ViewBag.Title = "Editar";
+    Layout = "~/Views/MasterPage/Home/_Home.cshtml";
+}
+
+<h2>Editar</h2>
+
+
+
+@using (Html.BeginForm(FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>CadastrarPordutoPorUnidadeViewModel</legend>
+        @Html.HiddenFor(d => d.Produto.ProdutoID)
+        @Html.DisplayNameFor(c => c.Produto.Codigo)
+        @Html.TextBoxFor(c => c.Produto.Codigo)
+        @Html.ValidationMessageFor(c=>c.Produto.Codigo)
+        <br />
+        <br />
+        @Html.DisplayNameFor(c => c.Produto.Nome)
+        @Html.TextBoxFor(c => c.Produto.Nome)
+        @Html.ValidationMessageFor(c => c.Produto.Nome)
+        <br />
+        <br />
+        @Html.DisplayNameFor(c => c.Produto.PrecoCompra)
+        @Html.TextBoxFor(c => c.Produto.PrecoCompra)
+        @Html.ValidationMessageFor(c => c.Produto.PrecoCompra)
+        <br />
+        <br />
+        @Html.DisplayNameFor(c => c.Produto.PrecoVenda)
+        @Html.TextBoxFor(c => c.Produto.PrecoVenda)
+        @Html.ValidationMessageFor(c => c.Produto.PrecoVenda)
+        <br />
+        <br />
+        @Html.DisplayNameFor(c => c.Produto.Quantidade)
+        @Html.TextBoxFor(c => c.Produto.Quantidade)
+        @Html.ValidationMessageFor(c => c.Produto.Quantidade)
+        <br />
+        <br />
+        @Html.DisplayNameFor(c => c.Produto.QuantidadeMaxima)
+        @Html.TextBoxFor(c => c.Produto.QuantidadeMaxima)
+        @Html.ValidationMessageFor(c => c.Produto.QuantidadeMaxima)
+        <br />
+        <br />
+        @Html.DisplayNameFor(c => c.Produto.QuantidadeMinima)
+        @Html.TextBoxFor(c => c.Produto.QuantidadeMinima)
+        @Html.ValidationMessageFor(c => c.Produto.QuantidadeMinima)
+        <br />
+        <br />
+        @Html.DisplayNameFor(c => c.Produto.Descricao)
+        @Html.TextBoxFor(c => c.Produto.Descricao)
+        @Html.ValidationMessageFor(c => c.Produto.Descricao)
+        <br />
+        <br />
+        @Html.DisplayNameFor(c => c.Produto.CategoriaID)
+        @Html.DropDownListFor(c => c.Produto.CategoriaID, Model.Categoria)
+        @Html.ValidationMessageFor(c => c.Produto.CategoriaID)
+        <p>
+            <input type="submit" value="Editar" />
+        </p>
+    </fieldset>
+}

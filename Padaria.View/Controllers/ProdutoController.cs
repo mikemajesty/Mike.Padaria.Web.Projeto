@@ -1,9 +1,7 @@
 ﻿using Padaria.Dominio.Entidades;
 using Padaria.Dominio.Repositorio;
 using Padaria.View.Models;
-using System.Linq;
 using System.Web.Mvc;
-using System.Data.Entity;
 
 namespace Padaria.View.Controllers
 {

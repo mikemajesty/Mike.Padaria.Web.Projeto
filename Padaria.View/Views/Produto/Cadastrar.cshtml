@@ -1,0 +1,117 @@
+﻿@model Padaria.View.Models.CadastrarPordutoPorUnidadeViewModel
+
+@{
+    ViewBag.Title = "Cadastrar";
+    Layout = "~/Views/MasterPage/Home/_Home.cshtml";
+}
+<h2>Cadastrar</h2>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Produto</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Produto.Codigo)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Produto.Codigo)
+            @Html.ValidationMessageFor(model => model.Produto.Codigo)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Produto.Nome)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Produto.Nome)
+            @Html.ValidationMessageFor(model => model.Produto.Nome)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Categoria)
+        </div>
+        <div class="editor-field">
+            @Html.DropDownListFor(c => c.Produto.CategoriaID, Model.Categoria)
+            @Html.ValidationMessageFor(model => model.Categoria)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Produto.PrecoCompra)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Produto.PrecoCompra)
+            @Html.ValidationMessageFor(model => model.Produto.PrecoCompra)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Produto.PrecoVenda)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Produto.PrecoVenda)
+            @Html.ValidationMessageFor(model => model.Produto.PrecoVenda)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Produto.Quantidade)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Produto.Quantidade)
+            @Html.ValidationMessageFor(model => model.Produto.Quantidade)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Produto.QuantidadeMinima)
+        </div>
+        <div class="editor-field" id="qtd">
+            @Html.EditorFor(model => model.Produto.QuantidadeMinima)
+            @Html.ValidationMessageFor(model => model.Produto.QuantidadeMinima)
+        </div>
+        <div class="editor-label" id="qtdmin">
+            @Html.LabelFor(model => model.Produto.QuantidadeMaxima)
+        </div>
+        <div class="editor-field" id="qtdmax">
+            @Html.EditorFor(model => model.Produto.QuantidadeMaxima)
+            @Html.ValidationMessageFor(model => model.Produto.QuantidadeMaxima)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Produto.Descricao)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Produto.Descricao)
+            @Html.ValidationMessageFor(model => model.Produto.Descricao)
+        </div>
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+<script>
+    $('input[type=submit]').click(function () {
+
+        var qtd =  $('#qtd').text();
+        var qtdmin = $('#qtdmin').text();
+        var qtdmax = $('#qtdmax').text();
+
+
+
+        if (qtd.text  == "") {
+            alert("txt quantidade vazio");
+            $('#qtdmin').text('0')
+        }
+        if (qtdmin.text() == "") {
+            alert("txt quantidadeMinimo vazio");
+            $('#qtdmin').text('0');
+        }
+        if (qtdmax.text() == "") {
+            alert("txt quantidadeMaxima vazio");
+            $('#qtdmax').text('0');
+        }
+    });
+</script>

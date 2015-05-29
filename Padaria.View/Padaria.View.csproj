@@ -192,6 +192,11 @@
     <Content Include="Views\Cliente\Editar.cshtml" />
     <Content Include="Views\Cliente\Detales.cshtml" />
     <Content Include="Views\Cliente\Deletar.cshtml" />
+    <Content Include="Views\Produto\Listar.cshtml" />
+    <Content Include="Views\Produto\Cadastrar.cshtml" />
+    <Content Include="Views\Produto\Deletar.cshtml" />
+    <Content Include="Views\Produto\Editar.cshtml" />
+    <Content Include="Views\Produto\Detales.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
