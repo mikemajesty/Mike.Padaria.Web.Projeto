@@ -25,7 +25,7 @@ namespace Padaria.View.Controllers
             clienteDB = new ClienteRepositorio();
             if (clienteDB.Cadastrar(cliente) != 0)
             {
-                RedirectToAction("Listar");
+              return RedirectToAction("Listar");
             }
             return View(cliente);
         }

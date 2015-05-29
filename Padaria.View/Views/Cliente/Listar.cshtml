@@ -1,0 +1,44 @@
+﻿@model IEnumerable<Padaria.Dominio.Entidades.Cliente>
+
+@{
+    ViewBag.Title = "Listar";
+    Layout = "~/Views/MasterPage/Home/_Home.cshtml";
+}
+<p>
+    @Html.ActionLink("Criar Novo", "Cadastrar", "Cliente", null, new { @class = "btn btn-primary" })
+</p>
+<table class="table">
+    <tr style="background-color:yellow">
+        <th>
+            @Html.DisplayNameFor(model => model.Nome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cpf)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Celular)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cpf)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Celular)
+            </td>
+            <td>
+                @Html.ActionLink("Editar", "Editar", new { ClienteID = item.ClienteID }, new { @class = "btn btn-primary" }) |
+                @Html.ActionLink("Detales", "Detales", new { ClienteID = item.ClienteID }, new { @class = "btn btn-primary" }) |
+                @Html.ActionLink("Deletar", "Deletar", new { ClienteID = item.ClienteID }, new { @class = "btn btn-primary" })
+            </td>
+        </tr>
+    }
+
+</table>
