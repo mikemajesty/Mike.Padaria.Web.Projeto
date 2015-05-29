@@ -1,0 +1,33 @@
+﻿@model Padaria.Dominio.Entidades.TipoPagamento
+
+@{
+    ViewBag.Title = "Deletar";
+    Layout = "~/Views/MasterPage/Home/_Home.cshtml";
+}
+
+<h2>Deletar</h2>
+<fieldset>
+    <legend>TipoPagamento</legend>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.Tipo)
+    </div>
+    <div class="display-field">
+        @Html.TextBoxFor(model => model.Tipo)
+    </div>
+</fieldset>
+<br />
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <p>
+        <input type="submit" value="Delete" class="btn btn-primary" /> |
+        @Html.ActionLink("Voltar", "Listar", null, new { @class = "btn btn-default" })
+    </p>
+}
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('input[type=text]').attr("readonly", "readonly");
+    });
+</script>

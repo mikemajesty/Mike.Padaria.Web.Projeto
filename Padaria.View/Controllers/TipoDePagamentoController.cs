@@ -1,9 +1,5 @@
 ﻿using Padaria.Dominio.Entidades;
 using Padaria.Dominio.Repositorio;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace Padaria.View.Controllers
@@ -68,6 +64,12 @@ namespace Padaria.View.Controllers
             }
             return View(tipoPagamento);
         }
-
+        [HttpGet]
+        public ActionResult Detales(int tipoPagamentoID)
+        {
+            tipoPagamentoDB = new TipoDePagamentoRepositorio();
+            TipoPagamento tipoPagamento = tipoPagamentoDB.GetTipoPagamento(tipoPagamentoID);
+            return View(tipoPagamento);
+        }
     }
 }

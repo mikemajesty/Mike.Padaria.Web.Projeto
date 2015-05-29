@@ -1,0 +1,34 @@
+﻿@model Padaria.Dominio.Entidades.TipoPagamento
+
+@{
+    ViewBag.Title = "Cadastrar";
+    Layout = "~/Views/MasterPage/Home/_Home.cshtml";
+}
+
+<h2>Cadastrar</h2>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>TipoPagamento</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Tipo)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Tipo)
+            @Html.ValidationMessageFor(model => model.Tipo)
+        </div>
+
+        <p>
+            <input type="submit" value="Salvar" class="btn btn-primary" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Voltar", "Listar", null, new { @class = "btn btn-default" })
+</div>
+    

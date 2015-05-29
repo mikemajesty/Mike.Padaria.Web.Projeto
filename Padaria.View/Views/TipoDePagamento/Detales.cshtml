@@ -1,0 +1,29 @@
+﻿@model Padaria.Dominio.Entidades.TipoPagamento
+
+@{
+    ViewBag.Title = "Detales";
+    Layout = "~/Views/MasterPage/Home/_Home.cshtml";
+}
+
+<h2>Detales</h2>
+<fieldset>
+    <legend>TipoPagamento</legend>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.Tipo)
+    </div>
+    <div class="display-field">
+        @Html.TextBoxFor(model => model.Tipo)
+    </div>
+</fieldset>
+<br />
+
+@Html.AntiForgeryToken()
+
+@Html.ActionLink("Voltar", "Listar", null, new { @class = "btn btn-default" })
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('input[type=text]').attr("readonly", "readonly");
+    });
+</script>
