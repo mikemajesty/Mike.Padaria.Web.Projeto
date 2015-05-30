@@ -1,4 +1,5 @@
-﻿using Padaria.Dominio.Repositorio;
+﻿using Padaria.Dominio.Entidades;
+using Padaria.Dominio.Repositorio;
 using Padaria.View.Models;
 using System;
 using System.Collections.Generic;
@@ -14,8 +15,9 @@ namespace Padaria.View.Controllers
         [HttpGet]
         public ActionResult Index()
         {
-            return View(FillViewModel());
-        }
+            return View(FillViewModel());        
+
+        }      
         [HttpGet]
         public PartialViewResult GetValorCaixa()
         {
@@ -29,7 +31,7 @@ namespace Padaria.View.Controllers
             return View(new PordutoComandaViewModel()
             {
                 Comanda = vendaDB.GetComandaPorCodigo(viewModel.Comanda.Codigo),
-                Produto = vendaDB.GetProdutoPorCosigo(viewModel.Produto.Codigo)
+                Produto = vendaDB.GetProdutoPorCodigo(viewModel.Produto.Codigo)
             });
         }
         private VendaViewModel FillViewModel()

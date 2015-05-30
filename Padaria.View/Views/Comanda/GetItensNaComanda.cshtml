@@ -1,0 +1,43 @@
+﻿@model IEnumerable<Padaria.Dominio.Entidades.VendaComComandaAtiva>
+
+<table class="table">
+    <tr style="background-color:yellow">
+        <td>
+            Produto ID
+        </td>
+        <td>
+            Comanda ID
+        </td>
+        <td>
+            Quantidade
+        </td>
+        <td>
+            Preço Total
+        </td>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <th>
+                @item.ProdutoID
+               
+            </th>
+
+            <th>
+                @item.ComandaID
+               
+
+            </th>
+            <th>
+                @item.Quantidade
+               
+            </th>
+            <th>
+                @item.PrecoTotal
+               
+            </th>
+        </tr>
+    }
+    <tr></tr>
+</table>
+

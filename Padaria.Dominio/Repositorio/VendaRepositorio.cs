@@ -75,9 +75,14 @@ namespace Padaria.Dominio.Repositorio
         }
         public Comanda GetComandaPorCodigo(string codigo)
         {
-            return Banco.Comanda.FirstOrDefault(c => c.Codigo == codigo);
+            return Banco.Comanda.FirstOrDefault(c=>c.Codigo == codigo);
         }
-        public Produto GetProdutoPorCosigo(string Codigo)
+        public VendaComComandaAtiva GetVeloresNaComanda(Comanda comanda)
+        {
+
+            return Banco.VendaComComandaAtiva.FirstOrDefault(c => c.ComandaID == comanda.ComandaID );
+        }
+        public Produto GetProdutoPorCodigo(string Codigo)
         {
             return Banco.Produto.FirstOrDefault(c => c.Codigo == Codigo);
         }

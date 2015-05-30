@@ -3,18 +3,21 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/MasterPage/Home/_Home.cshtml";
 }
-
+<script src="~/Scripts/ProcurarItensNaComanda.js"></script>
 <h2>Index</h2>
 
-@using (Html.BeginForm("Produto", "Venda"))
-{
-    <b>Comanda</b>
-    @Html.HiddenFor(c => c.Comanda.ComandaID)
 
-    @Html.TextBoxFor(c => c.Comanda.Codigo)
-    <b>Produto</b>
-    @Html.TextBoxFor(c => c.Produto.Codigo)
-    <input type="submit" value="Selecionar Comanda" />
-}
+<b>Comanda</b>
+@Html.HiddenFor(c => c.Comanda.ComandaID)
 
-@Html.DropDownList("TipoPagamento", Model.TipoPagamento)
+@Html.TextBoxFor(c => c.Comanda.Codigo)
+<a href="#" onclick="ProdurarItensNaComanda();" class="btn btn-default">Salvar Pedido</a>
+
+<br />
+<br />
+
+<div id="txt1">
+
+</div>
+
+
