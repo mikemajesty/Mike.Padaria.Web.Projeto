@@ -10,9 +10,9 @@ namespace Padaria.View.Controllers
         [HttpGet]
         public ActionResult Index()
         {
-            return View(FillViewModel());        
+            return View(FillViewModel());
 
-        }      
+        }
         [HttpGet]
         public PartialViewResult GetValorCaixa()
         {
@@ -45,15 +45,9 @@ namespace Padaria.View.Controllers
                 Produto = vendaDB.GetProduto
             };
         }
-        public PartialViewResult Modal(/*string Erro*/)
+        public PartialViewResult Modal()
         {
-         
-            //if (Erro != null)
-            //{
-                /*ViewBag.Erro = Erro;*/
-                return PartialView();
-            //}
-            //return null;
+            return PartialView();
         }
     }
 }
