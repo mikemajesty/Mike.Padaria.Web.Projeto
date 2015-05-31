@@ -10,14 +10,16 @@
     @Scripts.Render("~/bundles/jquery")
     @Styles.Render("~/Content/Custom")
     @Styles.Render("~/Content/bootstrap")
+    @Scripts.Render("~/bundles/Custom")
+    @Scripts.Render("~/bundles/bootstrap")
 </head>
 <body>
     <div class="navbar navbar-inverse" role="navigation">
         <a class="navbar-brand" href="#">
-            @*Valor No Caixa : @Html.Action("GetValorCaixa", "Venda")*@
+            Valor No Caixa : @Html.Action("GetValorCaixa", "Venda")
         </a>
     </div>
-
+   
     <div class="col-xs-3">
         @Html.Partial("~/Views/MasterPage/Home/_Menu.cshtml")
     </div>

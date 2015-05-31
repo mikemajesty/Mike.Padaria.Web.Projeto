@@ -1,10 +1,5 @@
-﻿using Padaria.Dominio.Entidades;
-using Padaria.Dominio.Repositorio;
+﻿using Padaria.Dominio.Repositorio;
 using Padaria.View.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace Padaria.View.Controllers
@@ -49,6 +44,16 @@ namespace Padaria.View.Controllers
                 VendaNaComanda = vendaDB.GetVendaComComandaAtiva,
                 Produto = vendaDB.GetProduto
             };
+        }
+        public PartialViewResult Modal(/*string Erro*/)
+        {
+         
+            //if (Erro != null)
+            //{
+                /*ViewBag.Erro = Erro;*/
+                return PartialView();
+            //}
+            //return null;
         }
     }
 }

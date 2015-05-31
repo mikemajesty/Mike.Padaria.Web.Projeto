@@ -74,14 +74,24 @@ namespace Padaria.View.Controllers
             }
             return View(comanda);
         }
+        [HttpPost]
         public JsonResult GetComanda(string Codigo)
         {
-            comandaBD = new ComandaRepositorio();
-            Comanda comanda = comandaBD.GetComandaPorCodigo(Codigo);
-            return Json(new { Codigo = comanda.Codigo, ComandaID = comanda.ComandaID }, JsonRequestBehavior.AllowGet);
-           
+            try
+            {
+                comandaBD = new ComandaRepositorio();
+                Comanda comanda = comandaBD.GetComandaPorCodigo(Codigo);
+                return Json(new { Codigo = comanda.Codigo, ComandaID = comanda.ComandaID }, JsonRequestBehavior.AllowGet);
+
+            }
+            catch (System.Exception)
+            {
+
+                return null;
+            }
+
         }
-        //[HttpPost]
+        [HttpGet]
         public ActionResult GetItensNaComanda(string comandaCodigo)
         {
             comandaBD = new ComandaRepositorio();
