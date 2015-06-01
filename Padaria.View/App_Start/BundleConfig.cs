@@ -24,7 +24,8 @@ namespace Padaria.View.App_Start
             bundles.Add(new StyleBundle("~/Content/Custom")
                 .Include("~/Content/Menu.css"));
             bundles.Add(new ScriptBundle("~/Bundles/Custom")
-               .Include("~/Scripts/ProcurarItensNaComanda.js"));
+               .Include("~/Scripts/ProcurarItensNaComanda.js")
+               .Include("~/Scripts/IserirItensNoCarrinho.js"));
         }
     }
 }

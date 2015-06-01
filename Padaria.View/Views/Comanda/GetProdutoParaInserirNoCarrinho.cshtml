@@ -1,0 +1,44 @@
+﻿@model IEnumerable<Padaria.Dominio.Entidades.Produto>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr style="background-color:yellow">
+        <th>
+            @Html.DisplayNameFor(model => model.Codigo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Nome)
+        </th>
+        
+       
+        <th>
+            @Html.DisplayNameFor(model => model.PrecoVenda)
+        </th>
+       
+        
+
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Codigo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nome)
+            </td>
+           
+            
+            <td>
+                @Html.DisplayFor(modelItem => item.PrecoVenda)
+            </td>            
+          
+            
+
+        </tr>
+    }
+
+</table>

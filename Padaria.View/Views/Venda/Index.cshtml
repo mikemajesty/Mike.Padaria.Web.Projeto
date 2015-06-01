@@ -5,27 +5,30 @@
 }
 
 
-<fieldset>
+<fieldset >
+    <legend style="text-align:center">Comanda</legend>
     <b>Digite o codigo de barra da comanda</b>
   
   
     @Html.TextBoxFor(c => c.Comanda.Codigo)
     @Html.ValidationMessageFor(c => c.Comanda.Codigo)
     <a href="#" onclick="ProdurarItensNaComanda();" class="btn btn-default" id="btnBuscasItens">Somar Comanda</a>
+    <div id="txt1">
+
+    </div>
+</fieldset>
+<!--                                                                                                          -->
+<fieldset>
+    <legend style="text-align:center">Sem Comanda</legend>
+    <b>Inserir itens no carrinho</b>
+    @Html.TextBoxFor(c => c.Produto.Codigo)
+    @Html.ValidationMessageFor(c => c.Produto.Codigo)
+    <a href="#" onclick="IserirItensNoCarrinho();" class="btn btn-default" id="btnBuscasItens">Somar Comanda</a>
+    <div id="txt2">
+
+    </div>
 </fieldset>
 <br />
 <br />
 
-<div id="txt1">
 
-</div>
-@Html.Partial("Modal", "Venda")
-
-@*<script type="text/javascript">
-    debugger
-    $('#btnFechar').click(function () {
-        debugger
-        $('#deleteModal').modal('hide');
-    });
-
-</script>*@

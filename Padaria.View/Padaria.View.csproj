@@ -162,6 +162,7 @@
     <Content Include="Icon.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\IserirItensNoCarrinho.js" />
     <Content Include="Scripts\jquery-2.1.4.js" />
     <Content Include="Scripts\jquery-2.1.4.min.js" />
     <Content Include="Scripts\jquery-2.1.4.min.map" />
@@ -219,6 +220,7 @@
     <Content Include="Views\MasterPage\Home\_MenuVenda.cshtml" />
     <Content Include="Views\Comanda\GetItensNaComanda.cshtml" />
     <Content Include="Views\Venda\Modal.cshtml" />
+    <Content Include="Views\Comanda\GetProdutoParaInserirNoCarrinho.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

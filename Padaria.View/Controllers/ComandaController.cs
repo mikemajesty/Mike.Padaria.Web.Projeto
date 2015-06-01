@@ -1,5 +1,6 @@
 ﻿using Padaria.Dominio.Entidades;
 using Padaria.Dominio.Repositorio;
+using System;
 using System.Web.Mvc;
 
 namespace Padaria.View.Controllers
@@ -8,8 +9,10 @@ namespace Padaria.View.Controllers
     {
 
         private ComandaRepositorio comandaBD = null;
+        private ProdutoRepositorio produtoBD = null;
         private const int Sucesso = 1;
         private const int Insucesso = 0;
+       
         [HttpGet]
         public ActionResult Listar()
         {
@@ -91,12 +94,37 @@ namespace Padaria.View.Controllers
             }
 
         }
+        [HttpPost]
+        public JsonResult GetProdutosEsomaNoCarrinho(string Codigo)
+        {
+            try
+            {
+                //, Nome = produto.Nome, PrecoVenda= produto.PrecoVenda, PrecoCompra = produto.PrecoCompra, Quantidade = produto.Quantidade 
+                produtoBD = new ProdutoRepositorio();
+                Produto produto = produtoBD.GetProdutoPorCodigo(Codigo);
+                return Json(new { ID = produto.ProdutoID,Codigo = produto.Codigo}, JsonRequestBehavior.AllowGet);
+
+            }
+            catch (System.Exception)
+            {
+
+                return null;
+            }
+
+        }
         [HttpGet]
         public ActionResult GetItensNaComanda(string comandaCodigo)
         {
             comandaBD = new ComandaRepositorio();
             return PartialView(comandaBD.ListarItensPorCodigoDaComanda(comandaCodigo));
         }
-
+        [HttpGet]
+        public ActionResult GetProdutoParaInserirNoCarrinho(int ID)
+        {
+            ProdutoRepositorio comanda = new ProdutoRepositorio();            
+            return PartialView(comanda.GetProdutoListar(ID));
+        }
+     
+        
     }
 }

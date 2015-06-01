@@ -80,6 +80,6 @@ namespace Padaria.View.Controllers
             Produto produto = produtoDB.GetProduto(ProdutoID);
             return View(CarregarViewModelProdutoCategoria(produto, produto.CategoriaID));
         }
-
+        
     }
 }

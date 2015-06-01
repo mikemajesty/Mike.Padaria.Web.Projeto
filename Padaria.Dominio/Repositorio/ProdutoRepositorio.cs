@@ -13,6 +13,10 @@ namespace Padaria.Dominio.Repositorio
         {
             get { return banco; }
         }
+        public  Produto GetProdutoPorCodigo(string codigo)
+        {
+            return Banco.Produto.FirstOrDefault(c => c.Codigo == codigo);
+        }
         public IQueryable<Produto> ListarCliente()
         {            
             return Banco.Produto.Include(c => c.Categoria);
@@ -32,6 +36,11 @@ namespace Padaria.Dominio.Repositorio
         public Produto GetProduto(int ProdutoID)
         {
             return banco.Produto.Find(ProdutoID);           
+        }
+        public IQueryable<Produto> GetProdutoListar(int ProdutoID)
+        {
+            //Produto produto = banco.Produto.Find(ProdutoID);
+            return Banco.Produto.Where(c => c.ProdutoID == ProdutoID);
         }
         public int Editar(Produto produto)
         {
