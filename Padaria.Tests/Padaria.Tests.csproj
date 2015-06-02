@@ -104,6 +104,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UnitTest1.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App.config" />
@@ -117,7 +118,7 @@
       <Name>Padaria.Dominio</Name>
     </ProjectReference>
     <ProjectReference Include="..\Padaria.View\Padaria.View.csproj">
-      <Project>{25D4DE59-C431-44F5-867D-85973DAB43B0}</Project>
+      <Project>{25d4de59-c431-44f5-867d-85973dab43b0}</Project>
       <Name>Padaria.View</Name>
     </ProjectReference>
   </ItemGroup>

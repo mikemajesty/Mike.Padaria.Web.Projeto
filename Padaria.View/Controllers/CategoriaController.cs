@@ -13,6 +13,7 @@ namespace Padaria.View.Controllers
         [HttpGet]
         public ActionResult Listar()
         {
+           
             categoriaDB = new CategoriaRepositorio();
             return View(categoriaDB.Listar());
 

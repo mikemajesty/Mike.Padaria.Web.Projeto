@@ -17,6 +17,11 @@ namespace Padaria.Dominio.Repositorio
         {
             banco = new _DbContext();
         }
+        public ComandaRepositorio(_DbContext banco)
+        {
+            this.banco = banco;
+        }
+
         public _DbContext Banco
         {
             get { return banco; }
