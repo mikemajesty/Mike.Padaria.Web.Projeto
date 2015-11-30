@@ -1,0 +1,2 @@
+# Web Application, Caixa para padaria usando o conceito de comanda eletronica.
+Web application usando as seguintes tecnologias: ASP.NET MVC 4, Bootstrap, Entity Framework 5 DataBase First e SQLSERVER. Projeto a fim de aprendizagem. Possuía pouco conhecimento no ASP.NET MVC 4, estava estudando resolvi colocar meus conhecimentos em pratica, porem eu possuía pouco conhecimento em Jquery e Ajax e o projeto parou quando necessitei do mesmo. Foi muito útil o aprendizado e foi o ponto de partida para eu começar a estudar Java Script e Ajax.
